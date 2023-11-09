@@ -1,3 +1,4 @@
+<%- include("partials/header.ejs") %>
 
 <% if (locals.joke) { %> 
     <div> <%= joke %> </div>
@@ -10,3 +11,5 @@
 <% if (locals.delivery) { %> 
     <div> <%= delivery %> </div>
 <% } %>
+
+<%- include("partials/footer.ejs") %>
