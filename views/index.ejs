@@ -1,15 +1,106 @@
 <%- include("partials/header.ejs") %>
 
-<% if (locals.joke) { %> 
-    <div> <%= joke %> </div>
-<% } %>
+    <div class="container text-center">
+    <%# Checkboxes for the user to select the category of the jokes: %>
+        <p>Select a category for your joke: (You can select "Any" or your can select multiple categories you'd like to get your jokes from!)</p>
 
-<% if (locals.setup) { %> 
-    <div> <%= setup %> </div>
-<% } %>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="Any" id="Any" value="Any">
+            <label class="form-check-label" for="inlineCheckbox1">Any</label>
+        </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="Programming" id="Programming" value="Programming">
+            <label class="form-check-label" for="inlineCheckbox2">Programming</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="Misc" id="Misc" value="Misc">
+            <label class="form-check-label" for="inlineCheckbox1">Misc</label>
+        </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="Dark" id="Dark" value="Dark">
+            <label class="form-check-label" for="inlineCheckbox2">Dark</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="Pun" id="Pun" value="Pun">
+            <label class="form-check-label" for="inlineCheckbox1">Pun</label>
+        </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Spooky</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Christmas</label>
+        </div>
+    </div>
 
-<% if (locals.delivery) { %> 
-    <div> <%= delivery %> </div>
-<% } %>
+    <%# Checkboxes for the user to select the languaje of the jokes: %>
+    <div class="container text-center">
+        <p>Select the languaje of your joke:</p>
+        
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="cs" id="cs" value="cs">
+            <label class="form-check-label" for="inlineCheckbox1">Czech</label>
+        </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="de" id="de" value="de">
+            <label class="form-check-label" for="inlineCheckbox2">Deutch</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="en" id="en" value="en">
+            <label class="form-check-label" for="inlineCheckbox1">English</label>
+        </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="es" id="es" value="es">
+            <label class="form-check-label" for="inlineCheckbox2">Spanish</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="fr" id="fr" value="fr">
+            <label class="form-check-label" for="inlineCheckbox1">French</label>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-4">How many jokes you'd like to get?</div>
+            <div class="col-4"><input class="form-control" type="text" placeholder="Number of jokes" aria-label="default input example"></div>
+        </div>
+    </div>
+
+    <script>
+        function CheckboxEnabler(checkbox){
+            var checkboxName = document.getElementsByName(checkbox.name);
+            var anyCheckbox = document.getElementById("Any");
+
+            if (anyCheckbox.checked) {
+            for(var i=0; i < checkboxName.length; i++){
+                    checkboxName[i].disabled = true;
+            } 
+            } 
+        }
+    </script>
+    <div class="container text-center">
+        <% if (locals.joke) { %>
+            <div> 
+                <h3>Here's your joke:</h3>
+                <%= joke %> 
+            </div>
+        <% } %>
+
+        <% if (locals.setup) { %> 
+            <div> 
+                <h3>Here's your joke:</h3>
+                <%= setup %> 
+            </div>
+        <% } %>
+
+        <% if (locals.delivery) { %> 
+            <div> <%= delivery %> </div>
+        <% } %>
+    </div>
+
+    <div class="container text-center">
+    <button type="button" class="btn btn-success">Success</button>
+    </div>
 
 <%- include("partials/footer.ejs") %>

@@ -1,6 +1,8 @@
-// Import express and axios
+// Import express, axios & Body-Parser modules
 import express from "express";
 import axios from "axios";
+import bodyParser from "body-parser";
+
 
 // Creation of an express app and set the port number.
 const app = express();
@@ -8,6 +10,12 @@ const port = 3000;
 
 // Use the public folder for static files.
 app.use(express.static("public"));
+
+//We activate bodyparser to parse data from user's request
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//We set de engine as ejs so jQuery can work in this type of file.
+app.set("view engine", "ejs");
 
 // When the user goes to the home page it should render the index.ejs file.
 app.get("/", async (req, res) => {
