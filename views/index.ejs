@@ -60,7 +60,7 @@
                 <label class="form-check-label" for="inlineCheckbox1">French</label>
             </div>
             <div class="row justify-content-center">
-                <div class="col-4">How many jokes you'd like to get?</div>
+                <div class="col-4">How many jokes you'd like to get? (Max 10 jokes per request)</div>
                 <div class="col-4"><input class="form-control" type="number" placeholder="Number of jokes" name="qty"></div>
             </div>
                 <div class="container text-center">
@@ -69,18 +69,35 @@
         </form>
     </div>
     <div class="container text-center">
-        <% if (locals.joke) { %>
+        <% if (locals.singularJoke) { %>
             <div> 
-                <h3>Have a good laugh with your joke/s:</h3>
-                <%= joke %> 
+                <h3>Have a good laugh with your joke:</h3>
+                <%= singularJoke %> 
             </div>
-        <% } if (locals.setup) { %> 
+        <% } else if (locals.setup) { %> 
             <div> 
-                <h3>Have a good laugh with your joke/s:</h3>
-                <%= setup %> 
+                <h3>Have a good laugh with your joke:</h3>
+                <div><%= setup %> </div>
+                <div><%= delivery %> </div>
             </div>
-        <% } if (locals.delivery) { %> 
-            <div> <%= delivery %> </div>
+        <% } else if (locals.pluralJokes) { %> 
+            <div> 
+                <h3>Have a good laugh with your jokes:</h3>
+                <% for(i=0; i<pluralJokes.length; i++){ %>
+                    <% if (pluralJokes[i].type === 'twopart') { %>
+                        <div class="container">
+                        <%=i+1%><%=pluralJokes[i].setup %>
+                        </div>
+                        <div>
+                        <%= pluralJokes[i].delivery %>
+                        </div>
+                    <% } else if (pluralJokes[i].type === 'single') { %>
+                        <div>
+                        <%=i+1%><%= pluralJokes[i].joke %>
+                        </div>
+                    <% } %>
+                <%} %> 
+            </div>
         <% }%>
     </div>
 

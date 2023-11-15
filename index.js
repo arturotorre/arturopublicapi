@@ -37,17 +37,18 @@ app.post("/get-joke", async (req, res) => {
     const jokeLanguage = req.body.language;
     const jokeQty = req.body.qty;
     try {
-        const result = await axios.get("https://v2.jokeapi.dev/joke/"+jokeCategory,{params: { lang: jokeLanguage} });
+        const result = await axios.get("https://v2.jokeapi.dev/joke/"+jokeCategory,{params: { lang: jokeLanguage, amount:jokeQty} });
         res.render("index.ejs", {
-            joke: result.data.joke,
+            singularJoke: result.data.joke,
             setup : result.data.setup,
-            delivery: result.data.delivery
+            delivery: result.data.delivery,
+            pluralJokes: result.data.jokes
         });
+        console.log(result.data);
     } catch (error) {
     res.render("index.ejs", { joke: JSON.stringify(error.data) });
     }
   });
-
 
 // Listen on your predefined port and start the server.
 app.listen(port, () => {
