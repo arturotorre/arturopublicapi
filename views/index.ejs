@@ -98,7 +98,11 @@
                     <% } %>
                 <%} %> 
             </div>
-        <% }%>
+        <% } else if(locals.error){%>
+            <% if( error === true){ %>
+            <div>We couldn't find jokes that match your criteria, please try again.</div>
+            <% } %>
+        <% } %>
     </div>
 
 <%- include("partials/footer.ejs") %>

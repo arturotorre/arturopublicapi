@@ -42,7 +42,8 @@ app.post("/get-joke", async (req, res) => {
             singularJoke: result.data.joke,
             setup : result.data.setup,
             delivery: result.data.delivery,
-            pluralJokes: result.data.jokes
+            pluralJokes: result.data.jokes,
+            error: result.data.error
         });
         console.log(result.data);
     } catch (error) {
