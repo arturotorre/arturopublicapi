@@ -1,6 +1,10 @@
 <%- include("partials/header.ejs") %>
 
     <div class="container text-center">
+        <div class="header">
+            <h1>Welcome to Life is a joke!</h1>
+            <h5 class="h5">What is life without some good laughs?</h5>
+        </div>
         <div>
             <h5> 😁 Select the criteria for your joke(s) and click on the button below to see what we got for you! 😆 </h5>
         </div>
@@ -70,18 +74,26 @@
     </div>
     <div class="container text-center">
         <% if (locals.singularJoke) { %>
-            <div> 
-                <h3>Have a good laugh with your joke:</h3>
-                <%= singularJoke %> 
+            <div class="card"> 
+                <div class="card-header"><h3>Have a good laugh with your joke:</h3></div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= singularJoke %></li>
+                </ul>
             </div>
         <% } else if (locals.setup) { %> 
-            <div> 
-                <h3>Have a good laugh with your joke:</h3>
-                <div><%= setup %> </div>
-                <div><%= delivery %> </div>
+            <div class="card"> 
+                <div class="card-header">
+                    <h3>Have a good laugh with your joke:</h3>
+                </div>
+                <div>
+                    <%= setup %> 
+                </div>
+                <div>
+                    <%= delivery %>
+                </div>
             </div>
         <% } else if (locals.pluralJokes) { %> 
-            <div> 
+            <div class="card"> 
                 <h3>Have a good laugh with your jokes:</h3>
                 <% for(i=0; i<pluralJokes.length; i++){ %>
                     <% if (pluralJokes[i].type === 'twopart') { %>
@@ -100,7 +112,7 @@
             </div>
         <% } else if(locals.error){%>
             <% if( error === true){ %>
-            <div>We couldn't find jokes that match your criteria, please try again.</div>
+            <h4>Sorry, we couldn't find jokes that match your criteria, please try again.</h4>
             <% } %>
         <% } %>
     </div>
