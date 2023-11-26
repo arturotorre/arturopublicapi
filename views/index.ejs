@@ -5,66 +5,108 @@
             <h1>Welcome to Life is a joke!</h1>
             <h5 class="h5">What is life without some good laughs?</h5>
         </div>
-        <div>
-            <h5> 😁 Select the criteria for your joke(s) and click on the button below to see what we got for you! 😆 </h5>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide container carousel_container">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    <%# Checkboxes for the user to select the category of the jokes: %>
-        <p>Select a category for your joke: (You can select "Any" or your can select multiple categories you'd like to get your jokes from!)</p>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/heman_pensativo.png" class="d-block w-100" >
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-text">Have you ever wondered, Is this how life is supposed to be?</h5>
+              <p class="carousel-text">Just working 9 to 5 and the rest of the day thinking about all my problems?</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/heman_advise.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block carousel-text-white">
+              <h5>Well average citizen, you're wrong. </h5>
+              <p>Life is about enjoying all the small things in life. So have a laugh here and forget evertyhing else for a moment!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/heman_seeyou.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container text-center">
+        <%# Checkboxes for the user to select the category of the jokes: %>
+        <div class="form-p">
+            <p>😁 Select the criteria for your joke(s) and click on the button below to see what we got for you! 😆</p>
+        </div>
+    
         <form id="myForm" method="post">
             
-            <div class="form-check form-check-inline">
-                <input class="form-check-input category" type="checkbox" name="category" id="Any" value="Any">
-                <label class="form-check-label" for="inlineCheckbox1">Any</label>
-            </div>
+            <div class="card-title">
+                <p class="bold">1.- Select a category for your joke: (You can select "Any" or your can select multiple categories you'd like to get your jokes from!)</p>
+
                 <div class="form-check form-check-inline">
-                <input class="form-check-input category" type="checkbox" name="category" id="Programming" value="Programming">
-                <label class="form-check-label" for="inlineCheckbox2">Programming</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input category" type="checkbox" name="category" id="Misc" value="Miscellaneous">
-                <label class="form-check-label" for="inlineCheckbox1">Misc</label>
-            </div>
+                    <input class="form-check-input category" type="checkbox" name="category" id="Any" value="Any">
+                    <label class="form-check-label" for="inlineCheckbox1">Any</label>
+                </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input category" type="checkbox" name="category" id="Programming" value="Programming">
+                    <label class="form-check-label" for="inlineCheckbox2">Programming</label>
+                </div>
                 <div class="form-check form-check-inline">
-                <input class="form-check-input category" type="checkbox" name="category" id="Dark" value="Dark">
-                <label class="form-check-label" for="inlineCheckbox2">Dark</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input category" type="checkbox" name="category" id="Pun" value="Pun">
-                <label class="form-check-label" for="inlineCheckbox1">Pun</label>
-            </div>
+                    <input class="form-check-input category" type="checkbox" name="category" id="Misc" value="Miscellaneous">
+                    <label class="form-check-label" for="inlineCheckbox1">Misc</label>
+                </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input category" type="checkbox" name="category" id="Dark" value="Dark">
+                    <label class="form-check-label" for="inlineCheckbox2">Dark</label>
+                </div>
                 <div class="form-check form-check-inline">
-                <input class="form-check-input category" type="checkbox" name="category" id="Spooky" value="Spooky">
-                <label class="form-check-label" for="inlineCheckbox2">Spooky</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input category" type="checkbox" name="category" id="Christmas" value="Christmas">
-                <label class="form-check-label" for="inlineCheckbox2">Christmas</label>
+                    <input class="form-check-input category" type="checkbox" name="category" id="Pun" value="Pun">
+                    <label class="form-check-label" for="inlineCheckbox1">Pun</label>
+                </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input category" type="checkbox" name="category" id="Spooky" value="Spooky">
+                    <label class="form-check-label" for="inlineCheckbox2">Spooky</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input category" type="checkbox" name="category" id="Christmas" value="Christmas">
+                    <label class="form-check-label" for="inlineCheckbox2">Christmas</label>
+                </div>
             </div>
             <%# Checkboxes for the user to select the languaje of the jokes: %>
-            <p>Select the languaje of your joke:</p>
             
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="language" id="cs" value="cs">
-                <label class="form-check-label" for="inlineCheckbox1">Czech</label>
-            </div>
+            <div class="card-title">
+                <p class="bold">2.- Select the languaje of your joke:</p>
                 <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="language" id="de" value="de">
-                <label class="form-check-label" for="inlineCheckbox2">Deutch</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="language" id="en" value="">
-                <label class="form-check-label" for="inlineCheckbox1">English</label>
-            </div>
+                    <input class="form-check-input" type="checkbox" name="language" id="cs" value="cs">
+                    <label class="form-check-label" for="inlineCheckbox1">Czech</label>
+                </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="language" id="de" value="de">
+                    <label class="form-check-label" for="inlineCheckbox2">Deutch</label>
+                </div>
                 <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="language" id="es" value="es">
-                <label class="form-check-label" for="inlineCheckbox2">Spanish</label>
+                    <input class="form-check-input" type="checkbox" name="language" id="en" value="">
+                    <label class="form-check-label" for="inlineCheckbox1">English</label>
+                </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="language" id="es" value="es">
+                    <label class="form-check-label" for="inlineCheckbox2">Spanish</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="language" id="fr" value="fr">
+                    <label class="form-check-label" for="inlineCheckbox1">French</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="language" id="fr" value="fr">
-                <label class="form-check-label" for="inlineCheckbox1">French</label>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-4">How many jokes you'd like to get? (Max 10 jokes per request)</div>
+            <div class="row justify-content-center card-title">
+                <div class="col-4 bold">3.- How many jokes you'd like to get? (Max 10 jokes per request)</div>
                 <div class="col-4"><input class="form-control" type="number" placeholder="Number of jokes" name="qty"></div>
             </div>
                 <div class="container text-center">
@@ -93,19 +135,19 @@
                 </div>
             </div>
         <% } else if (locals.pluralJokes) { %> 
-            <div class="card"> 
+            <div class="card jokes-container" > 
                 <h3>Have a good laugh with your jokes:</h3>
                 <% for(i=0; i<pluralJokes.length; i++){ %>
                     <% if (pluralJokes[i].type === 'twopart') { %>
-                        <div class="container">
-                        <%=i+1%><%=pluralJokes[i].setup %>
+                        <div class="container jokes">
+                        <%=i+1+". "%><%= " - "+pluralJokes[i].setup %>
                         </div>
                         <div>
-                        <%= pluralJokes[i].delivery %>
+                        <%= " + "+pluralJokes[i].delivery %>
                         </div>
                     <% } else if (pluralJokes[i].type === 'single') { %>
-                        <div>
-                        <%=i+1%><%= pluralJokes[i].joke %>
+                        <div class="container jokes">
+                        <%=i+1+".- "%><%= pluralJokes[i].joke %>
                         </div>
                     <% } %>
                 <%} %> 

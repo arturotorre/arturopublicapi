@@ -16,3 +16,56 @@ body{
     margin-top: 40px;
     margin-bottom: 10px ;
 }
+
+.carousel_container{
+    width: 800px;
+}
+
+.carousel-text{
+    color: #000000;
+    font-family: Rubik;
+    font-size: larger;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.carousel-text-white{
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: larger;
+}
+
+.form-p{
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Rubik;
+}
+
+.card{
+    border-radius: 10px;
+    border-color: black;
+    background-color: #0000;
+}
+
+.card-header{
+    color: #FFFFFF;
+}
+
+.jokes{
+    margin-top: 15px;
+    border: black;
+}
+
+.jokes-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card-title{
+    margin-top: 40px;
+}
+
+.bold{
+    font-weight: bold;
+}
